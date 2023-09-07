@@ -1,6 +1,7 @@
 /** var - function scope variable */
 
-//블록 스코프
+// var은 함수 내에서만 지역 변수로 유지되기 때문에, 
+// 아래 코드에서는 전역 변수로 취급된다.
 for (var i = 0; i < 10; i++) {
   var leak = "I am available outside of the loop";
 }
