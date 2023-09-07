@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container{
+  margin: 30px auto;
+  padding: 30px;
+  width: 1000px;
+  border-radius: 5px;
+  border: 2px solid #CCC;
+  text-align: center;
+  background-color: #eee;
+  .title {
+    position: relative;
+    margin-bottom: 20px;
+  }&::after{
+    position: absolute;
+    width: 440px;
+    top: 85px;
+    right: 290px;
+    content: '';
+    border: 7px solid rgb(243, 165, 151);
+    opacity: .5;
+  }
+  .content{
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+  }
+}
