@@ -3,7 +3,6 @@ let person = "hong";
 let age = 25;
 
 function myTag(strings, personName, personAge) {
-  //strings : ['That ',' is a',' !!']
   let str = strings[1];  //'is a'
   let ageStr;
 
@@ -13,4 +12,8 @@ function myTag(strings, personName, personAge) {
 }
 
 let sentence = myTag`That ${person} is a ${age}!!`;
+// ``으로 매개변수 설정 가능
+//strings : ['That ',' is a',' !!']
+//personName = hong
+//personAge = 25
 console.log(sentence);  //hong is a youngster
