@@ -208,6 +208,8 @@ const kobis = {
 }
 
 //일별 박스오피스 출력
+
+/* 
 for (let i = 0; i < 10; i++) {
   let title = kobis.boxOfficeResult.dailyBoxOfficeList[i].movieNm
   let openDt = kobis.boxOfficeResult.dailyBoxOfficeList[i].openDt
@@ -218,11 +220,33 @@ for (let i = 0; i < 10; i++) {
   ${[i + 1]}위. ${title} (${openDt}) [누적관객수 : ${audiAcc}명 / 누적매출액 : ${salesAcc}원]
   `);
 }
+*/
 
-// let showKobis = kobis.boxOfficeResult;
-// let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
-// const movieList = `${showKobisRankList.map(movie =>
-//   `${movie.rank}, ${movie.movieNm}, ${movie.openDt}, ${movie.audiAcc}, ${movie.salesAcc} \n`)}
-//   `;
-// console.log(`박스오피스 타입 - ${showKobis.boxofficeType}`);
-// console.log(movieList);
+/*
+const movieList = `${showKobisRankList.map(movie =>
+  `${movie.rank}, ${movie.movieNm}, ${movie.openDt}, ${movie.audiAcc}, ${movie.salesAcc} \n`)}
+  `;
+console.log(`박스오피스 타입 - ${showKobis.boxofficeType}`);
+console.log(movieList);
+*/
+
+
+//일별 박스오피스 출력
+let showKobis = kobis.boxOfficeResult;
+let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
+function rank(v) {
+  return `${v.map(movie =>
+    `${movie.rank}위 ${movie.movieNm} <${movie.openDt}> ${parseInt(movie.audiAcc).toLocaleString()}명 / ${parseInt(movie.salesAcc).toLocaleString()}원 
+    `).join('\n')}
+    `
+}
+
+const movieList =
+  `
+  <h2>박스오피스 타입 - ${showKobis.boxofficeType}</h2>
+  <p>
+  ${rank(showKobisRankList)}
+  </p>
+  `
+
+console.log(movieList);
