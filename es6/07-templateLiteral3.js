@@ -5,7 +5,7 @@ function getPrice() {
   console.log(isDiscounted ? "$10" : "$20");
 }
 
-// getPrice();
+getPrice();//$20
 
 
 /** 삼항 연산자 추가하기 2 */
@@ -25,3 +25,9 @@ const text = `
 `;
 
 console.log(text);
+/* 
+<div>
+  <p>잔나비 : 20살 </p>
+  <p>대표곡 : 주저하는 연인들을 위해</p>
+</div>
+*/
