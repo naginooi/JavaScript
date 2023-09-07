@@ -8,9 +8,9 @@ for (var i = 0; i < 10; i++) {
 console.log(i);
 console.log(leak);
 
-var fscope = "I am available inside this function";
 //함수 스코프 (지역 스코프)
 function myfunction() {
+  var fscope = "I am available inside this function";
   console.log(fscope);
 }
 console.log(fscope); //에러 발생, 함수 스코프 영역을 벗어남
