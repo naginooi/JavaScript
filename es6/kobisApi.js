@@ -218,3 +218,11 @@ for (let i = 0; i < 10; i++) {
   ${[i + 1]}위. ${title} (${openDt}) [누적관객수 : ${audiAcc}명 / 누적매출액 : ${salesAcc}원]
   `);
 }
+
+// let showKobis = kobis.boxOfficeResult;
+// let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
+// const movieList = `${showKobisRankList.map(movie =>
+//   `${movie.rank}, ${movie.movieNm}, ${movie.openDt}, ${movie.audiAcc}, ${movie.salesAcc} \n`)}
+//   `;
+// console.log(`박스오피스 타입 - ${showKobis.boxofficeType}`);
+// console.log(movieList);
