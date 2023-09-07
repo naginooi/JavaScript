@@ -234,19 +234,15 @@ console.log(movieList);
 //일별 박스오피스 출력
 let showKobis = kobis.boxOfficeResult;
 let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
-function rank(v) {
+
+let rank = (v) => {
   return `${v.map(movie =>
-    `${movie.rank}위 ${movie.movieNm} <${movie.openDt}> ${parseInt(movie.audiAcc).toLocaleString()}명 / ${parseInt(movie.salesAcc).toLocaleString()}원 
-    `).join('\n')}
+    `<span>${movie.rank}위 ${movie.movieNm} <${movie.openDt}> ${parseInt(movie.audiAcc).toLocaleString()}명 / ${parseInt(movie.salesAcc).toLocaleString()}원
+    </span><br>`).join('')}
     `
 }
 
-const movieList =
-  `
-  <h2>박스오피스 타입 - ${showKobis.boxofficeType}</h2>
-  <p>
-  ${rank(showKobisRankList)}
-  </p>
-  `
-
-console.log(movieList);
+document.querySelector('.container').insertAdjacentHTML('beforeend', `
+  <h2 class="title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
+  <p class="content">${rank(showKobisRankList)}</p>
+`)
