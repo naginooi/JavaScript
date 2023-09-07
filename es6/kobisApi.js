@@ -215,6 +215,6 @@ for (let i = 0; i < 10; i++) {
   let salesAcc = parseInt(kobis.boxOfficeResult.dailyBoxOfficeList[i].salesAcc).toLocaleString();
 
   console.log(`
-  ${[i + 1]}위. ${title} (${openDt}) 누적관객수 : ${audiAcc}명 / 누적매출액 : ${salesAcc}원
+  ${[i + 1]}위. ${title} (${openDt}) [누적관객수 : ${audiAcc}명 / 누적매출액 : ${salesAcc}원]
   `);
 }
