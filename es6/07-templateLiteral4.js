@@ -8,12 +8,9 @@ const groceries = {
 
 //groceries의 각  값에 대해 map()을 수행하는 함수
 function groceryList(others) {
-  return `
-      <p>
-          ${others.map(other => `<span>${other}</span>`).join('\n')}
-      </p>
-  `;
+  return `${others.map(other => `<span>${other}</span>`).join('\n')}`;
 }
+// other : 로컬 변수 생성 (others parameter 값을 받아먹기 위해)
 
 //p 태그 내  모든 groceries를 출력. 마지막은 **others** 배열의 모든 원소를 포함
 const markup = `
