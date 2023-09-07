@@ -15,6 +15,8 @@ var greeting4 = () => {
   return "greeting4 : hello~";
 }
 
+//모두 heap에 저장
+
 /** 함수의 명시적 호출 */
 console.log(greeting1("홍길동"));
 console.log(greeting2("홍길동"));
