@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 @font-face {
   font-family: "NeoDunggeunmoPro-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2") format("woff2");
@@ -15,9 +10,20 @@
   font-weight: 700;
   font-style: normal;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "LINESeedKR-Bd";
+}
+
 form {
   margin-top: 30px;
   margin-left: 20px;
+}
+form button {
+  border: none;
+  color: #fff;
+  background-color: #176B87;
 }
 
 #kobisContent {
@@ -74,4 +80,7 @@ form {
 }
 #kobisContent .content table .tbody .customer-count {
   color: #64CCC5;
+}
+#kobisContent .content table .tbody .openDt {
+  font-size: 16px;
 }/*# sourceMappingURL=kobisApi.css.map */

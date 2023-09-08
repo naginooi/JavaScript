@@ -1,25 +1,32 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-@font-face {
+@font-face { //네오둥근
   font-family: 'NeoDunggeunmoPro-Regular';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
+@font-face { //라인
   font-family: 'LINESeedKR-Bd';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'LINESeedKR-Bd';
+}
+
 form {
   margin-top: 30px;
   margin-left: 20px;
+
+  button {
+    border: none;
+    color: #fff;
+    background-color: #176B87;
+  }
 }
 
 #kobisContent {
@@ -78,8 +85,13 @@ form {
         &:last-child {
           border: 0;
         }
+
         .customer-count {
           color: #64CCC5;
+        }
+
+        .openDt {
+          font-size: 16px;
         }
       }
     }

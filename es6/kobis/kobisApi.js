@@ -232,7 +232,7 @@ const kobisData = function (sdate) {
               <tr class="tbody">
                 <td class="rank">${movie.rank}위</td>
                 <td class="movieName">${movie.movieNm}</td> 
-                <td>${movie.openDt} </td> 
+                <td class="openDt">${movie.openDt} </td> 
                 <td class="customer-count">${parseInt(movie.audiAcc).toLocaleString()}명</td> 
                 <td class="revenue-count">${parseInt(movie.salesAcc).toLocaleString()}원</td> 
               </tr>
