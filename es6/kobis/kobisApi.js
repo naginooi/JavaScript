@@ -213,7 +213,14 @@ let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
 
 const movieList = `
 <h2 class="title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
-<table>
+<table border=1>
+  <tr>
+    <td>순위</td>
+    <td>제목</td>
+    <td>개봉일</td>
+    <td>누적관객수</td>
+    <td>누적매출액</td>
+  </tr>
   ${showKobisRankList.map(movie =>
   `
     <tr>
