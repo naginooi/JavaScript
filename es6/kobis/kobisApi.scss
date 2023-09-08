@@ -10,6 +10,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 form {
   margin-top: 30px;
   margin-left: 20px;
@@ -63,6 +70,8 @@ form {
       .tbody {
         height: 48px;
         border-bottom: 1px solid #E3F1D5;
+        font-family: 'CookieRun-Regular';
+        font-size: 18px;
 
         &:last-child {
           border: 0;
@@ -71,10 +80,6 @@ form {
         .movieName,
         .rank {
           text-align: center;
-        }
-
-        .movieName {
-          font-weight: bold;
         }
       }
     }
