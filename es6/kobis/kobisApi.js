@@ -208,41 +208,23 @@ const kobis = {
 }
 
 //일별 박스오피스 출력
-
-/* 
-for (let i = 0; i < 10; i++) {
-  let title = kobis.boxOfficeResult.dailyBoxOfficeList[i].movieNm
-  let openDt = kobis.boxOfficeResult.dailyBoxOfficeList[i].openDt
-  let audiAcc = parseInt(kobis.boxOfficeResult.dailyBoxOfficeList[i].audiAcc).toLocaleString();
-  let salesAcc = parseInt(kobis.boxOfficeResult.dailyBoxOfficeList[i].salesAcc).toLocaleString();
-
-  console.log(`
-  ${[i + 1]}위. ${title} (${openDt}) [누적관객수 : ${audiAcc}명 / 누적매출액 : ${salesAcc}원]
-  `);
-}
-*/
-
-/*
-const movieList = `${showKobisRankList.map(movie =>
-  `${movie.rank}, ${movie.movieNm}, ${movie.openDt}, ${movie.audiAcc}, ${movie.salesAcc} \n`)}
-  `;
-console.log(`박스오피스 타입 - ${showKobis.boxofficeType}`);
-console.log(movieList);
-*/
-
-
-//일별 박스오피스 출력
 let showKobis = kobis.boxOfficeResult;
 let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
 
-let rank = (v) => {
-  return `${v.map(movie =>
-    `<span>${movie.rank}위 ${movie.movieNm} <${movie.openDt}> ${parseInt(movie.audiAcc).toLocaleString()}명 / ${parseInt(movie.salesAcc).toLocaleString()}원
-    </span><br>`).join('')}
-    `
-}
+const movieList = `
+<h2 class="title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
+<table>
+  ${showKobisRankList.map(movie =>
+  `
+    <tr>
+      <td>${movie.rank}위</td>
+      <td>${movie.movieNm}</td> 
+      <td>${movie.openDt} </td> 
+      <td>${parseInt(movie.audiAcc).toLocaleString()}명</td> 
+      <td>${parseInt(movie.salesAcc).toLocaleString()}원</td> 
+    </tr>
+  `).join('')}
+</table>
+`
 
-document.querySelector('.container').insertAdjacentHTML('beforeend', `
-  <h2 class="title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
-  <p class="content">${rank(showKobisRankList)}</p>
-`)
+document.querySelector('#kobisContent').innerHTML = movieList;
