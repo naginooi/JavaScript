@@ -73,6 +73,7 @@ form {
         font-family: 'LINESeedKR-Bd';
         font-size: 18px;
         text-align: center;
+        word-break: keep-all;
 
         &:last-child {
           border: 0;
