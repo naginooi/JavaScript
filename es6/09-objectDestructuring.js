@@ -19,6 +19,7 @@ var person2 = {
 };
 
 const { first2, last2, age } = person2;
+//원래 이름과 똑같이 정의
 
 console.log(`first : ${first2}`);
 console.log(`last : ${last2}`);
