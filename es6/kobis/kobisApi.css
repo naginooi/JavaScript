@@ -7,8 +7,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 #kobisContent .content {
-  border: 1px solid gray;
   padding: 30px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+#kobisContent .content table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+#kobisContent .content table th, #kobisContent .content table td {
+  border: 1px solid gray;
 }/*# sourceMappingURL=kobisApi.css.map */

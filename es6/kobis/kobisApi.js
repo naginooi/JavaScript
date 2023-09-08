@@ -216,30 +216,37 @@ const kobisData = function (sdate) {
       let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
       const movieList = `
         <div class = "content">
-        <h2 class = "title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
-        <table border = 1>
-          <tr>
-            <td>순위</td>
-            <td>제목</td>
-            <td>개봉일</td>
-            <td>누적관객수</td>
-            <td>누적매출액</td>
-          </tr>
-          ${showKobisRankList.map(movie => // 배열 정렬 
-        `
+          <h2 class = "title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
+          <table>
             <tr>
-              <td>${movie.rank}위</td>
-              <td>${movie.movieNm}</td> 
-              <td>${movie.openDt} </td> 
-              <td>${parseInt(movie.audiAcc).toLocaleString()}명</td> 
-              <td>${parseInt(movie.salesAcc).toLocaleString()}원</td> 
+              <td>순위</td>
+              <td>제목</td>
+              <td>개봉일</td>
+              <td>누적관객수</td>
+              <td>누적매출액</td>
             </tr>
-            `).join('')}
-        </table>
+            ${showKobisRankList.map(movie => // 배열 정렬 
+        `
+              <tr>
+                <td>${movie.rank}위</td>
+                <td>${movie.movieNm}</td> 
+                <td>${movie.openDt} </td> 
+                <td>${parseInt(movie.audiAcc).toLocaleString()}명</td> 
+                <td>${parseInt(movie.salesAcc).toLocaleString()}원</td> 
+              </tr>
+              `).join('')}
+          </table>
         </div>
     `
       document.querySelector('#kobisContent').innerHTML = movieList;
     })
 }
+
+const searchDate = function () {
+  document.querySelector('#search').addEventListener('click', e => {
+    let sdate = document.querySelector('#searchDate').value
+    kobisData(sdate)
+  })
+}
 //DOM 객체 생성 후 execKobis 함수 호출 
-document.addEventListener("DOMContentLoaded", kobisData("20230907"))
+document.addEventListener("DOMContentLoaded", searchDate())
