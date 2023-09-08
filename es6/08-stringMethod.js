@@ -7,6 +7,7 @@ console.log(str.indexOf("short"));  //10
 //2. slice()
 const strSlice = "pizza, orange, apple";
 console.log(strSlice.slice(0, 5));  //pizza
+// 0번째부터 (5-1)번째까지
 
 //3. toUpperCase()
 const strToUpperCase = "i ate an apple";
