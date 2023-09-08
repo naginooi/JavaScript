@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 form {
   margin-top: 30px;
   margin-left: 20px;
@@ -22,7 +28,8 @@ form {
 #kobisContent .content h2 {
   margin-bottom: 20px;
   text-align: center;
-  color: #FFBFBF;
+  color: #053B50;
+  font-family: "NeoDunggeunmoPro-Regular";
 }
 #kobisContent .content table {
   border-spacing: 1;
@@ -44,8 +51,9 @@ form {
 }
 #kobisContent .content table .thead {
   height: 60px;
-  background: #A8DF8E;
+  background: #176B87;
   font-size: 16px;
+  color: #fff;
 }
 #kobisContent .content table .tbody {
   height: 48px;

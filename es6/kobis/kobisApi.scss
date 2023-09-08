@@ -3,6 +3,13 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'NeoDunggeunmoPro-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 form {
   margin-top: 30px;
   margin-left: 20px;
@@ -22,8 +29,10 @@ form {
     h2 {
       margin-bottom: 20px;
       text-align: center;
-      color: #FFBFBF;
+      color: #053B50;
+      font-family: 'NeoDunggeunmoPro-Regular';
     }
+
     table {
       border-spacing: 1;
       border-collapse: collapse;
@@ -46,8 +55,9 @@ form {
 
       .thead {
         height: 60px;
-        background: #A8DF8E;
+        background: #176B87;
         font-size: 16px;
+        color: #fff;
       }
 
       .tbody {
@@ -62,7 +72,8 @@ form {
         .rank {
           text-align: center;
         }
-        .movieName{
+
+        .movieName {
           font-weight: bold;
         }
       }
