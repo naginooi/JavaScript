@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+form {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
 #kobisContent {
   display: flex;
   flex-direction: column;
@@ -14,10 +19,45 @@
   border: 2px solid gray;
   border-radius: 5px;
 }
-#kobisContent .content table {
-  border: 1px solid gray;
-  border-collapse: collapse;
+#kobisContent .content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FFBFBF;
 }
-#kobisContent .content table th, #kobisContent .content table td {
-  border: 1px solid gray;
+#kobisContent .content table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#kobisContent .content table * {
+  position: relative;
+}
+#kobisContent .content table td,
+#kobisContent .content table th {
+  padding-left: 20px;
+}
+#kobisContent .content table .thead {
+  height: 60px;
+  background: #A8DF8E;
+  font-size: 16px;
+}
+#kobisContent .content table .tbody {
+  height: 48px;
+  border-bottom: 1px solid #E3F1D5;
+}
+#kobisContent .content table .tbody:last-child {
+  border: 0;
+}
+#kobisContent .content table .tbody .movieName,
+#kobisContent .content table .tbody .rank {
+  text-align: center;
+}
+#kobisContent .content table .tbody .movieName {
+  font-weight: bold;
 }/*# sourceMappingURL=kobisApi.css.map */

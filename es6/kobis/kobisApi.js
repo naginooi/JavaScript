@@ -220,18 +220,18 @@ const kobisData = function (sdate) {
         <div class = "content">
           <h2 class = "title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
           <table>
-            <tr>
-              <td>순위</td>
-              <td>제목</td>
-              <td>개봉일</td>
-              <td>누적관객수</td>
-              <td>누적매출액</td>
+            <tr class="thead">
+              <th>순위</th>
+              <th>제목</th>
+              <th>개봉일</th>
+              <th>누적관객수</th>
+              <th>누적매출액</th>
             </tr>
             ${showKobisRankList.map(movie => // 배열 정렬 
         `
-              <tr>
-                <td>${movie.rank}위</td>
-                <td>${movie.movieNm}</td> 
+              <tr class="tbody">
+                <td class="rank">${movie.rank}위</td>
+                <td class="movieName">${movie.movieNm}</td> 
                 <td>${movie.openDt} </td> 
                 <td>${parseInt(movie.audiAcc).toLocaleString()}명</td> 
                 <td>${parseInt(movie.salesAcc).toLocaleString()}원</td> 
@@ -243,7 +243,7 @@ const kobisData = function (sdate) {
       document.querySelector('#kobisContent').innerHTML = movieList;
     })
 }
-function getFormatDate(date) {
+function getFormatDate(date) { //yyyymmdd format
   var year = date.getFullYear();              //yyyy
   var month = (1 + date.getMonth());          //M
   month = month >= 10 ? month : '0' + month;  //month 두자리로 저장
@@ -265,5 +265,4 @@ document.addEventListener("DOMContentLoaded", () => {
     let sdate = document.querySelector('#searchDate').value
     kobisData(sdate)
   })
-
 })
