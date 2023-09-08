@@ -207,6 +207,8 @@ const kobis = { // api 데이터
   }
 }
 
+let date;
+
 //일별 박스오피스 출력
 const kobisData = function (sdate) {
   fetch(`http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`) //api 주소 가져오기
@@ -241,14 +243,23 @@ const kobisData = function (sdate) {
       document.querySelector('#kobisContent').innerHTML = movieList;
     })
 }
-
+function getFormatDate(date) {
+  var year = date.getFullYear();              //yyyy
+  var month = (1 + date.getMonth());          //M
+  month = month >= 10 ? month : '0' + month;  //month 두자리로 저장
+  var day = date.getDate() - 1;                   //d-1
+  day = day >= 10 ? day : '0' + day;          //day 두자리로 저장
+  return year + month + day;
+}
 //DOM 객체 생성 후 execKobis 함수 호출 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault()
   })
 
-  kobisData("20230907") //default
+  date = new Date()
+
+  kobisData(getFormatDate(date)) //default로 어제자 날짜를 보여준다
 
   document.querySelector('#search').addEventListener('click', e => {
     let sdate = document.querySelector('#searchDate').value
