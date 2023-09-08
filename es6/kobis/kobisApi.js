@@ -211,12 +211,13 @@ const kobis = { // api 데이터
 const kobisData = function (sdate) {
   fetch(`http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`) //api 주소 가져오기
     .then(response => response.json()) //읽어온 데이터를 json으로 변환
-    .then(kobis => { //kobis 객체 안의 데이터 추출
+    .then(kobis => { //kobis라는 객체 안의 데이터 추출
       let showKobis = kobis.boxOfficeResult;
       let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
       const movieList = `
-        <h2 class="title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
-        <table border=1>
+        <div class = "content">
+        <h2 class = "title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
+        <table border = 1>
           <tr>
             <td>순위</td>
             <td>제목</td>
@@ -235,6 +236,7 @@ const kobisData = function (sdate) {
             </tr>
             `).join('')}
         </table>
+        </div>
     `
       document.querySelector('#kobisContent').innerHTML = movieList;
     })
