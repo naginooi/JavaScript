@@ -209,10 +209,9 @@ const kobis = { // api 데이터
 
 //일별 박스오피스 출력
 const kobisData = function (sdate) {
-  //api 주소 가져오기
-  fetch(`http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`)
-    .then(response => response.json())
-    .then(kobis => {
+  fetch(`http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`) //api 주소 가져오기
+    .then(response => response.json()) //읽어온 데이터를 json으로 변환
+    .then(kobis => { //kobis 객체 안의 데이터 추출
       let showKobis = kobis.boxOfficeResult;
       let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
       const movieList = `
