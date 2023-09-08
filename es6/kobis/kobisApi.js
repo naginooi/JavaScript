@@ -244,10 +244,15 @@ const kobisData = function (sdate) {
 
 //DOM 객체 생성 후 execKobis 함수 호출 
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('form').addEventListener('submit', e => {
+    e.preventDefault()
+  })
+
   kobisData("20230907") //default
-  
+
   document.querySelector('#search').addEventListener('click', e => {
     let sdate = document.querySelector('#searchDate').value
     kobisData(sdate)
   })
+
 })
