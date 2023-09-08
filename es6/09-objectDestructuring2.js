@@ -1,4 +1,4 @@
-/** 객체 디스트럭처링 - 중첩된 객체 형태 */
+/** 객체 구조분해 - 중첩된 객체 형태 */
 const person = {
   name: "hong",
   last: "gildong",
