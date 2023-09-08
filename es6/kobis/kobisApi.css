@@ -10,9 +10,9 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "CookieRun-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
-  font-weight: normal;
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 form {
@@ -64,13 +64,13 @@ form {
 #kobisContent .content table .tbody {
   height: 48px;
   border-bottom: 1px solid #E3F1D5;
-  font-family: "CookieRun-Regular";
+  font-family: "LINESeedKR-Bd";
   font-size: 18px;
+  text-align: center;
 }
 #kobisContent .content table .tbody:last-child {
   border: 0;
 }
-#kobisContent .content table .tbody .movieName,
-#kobisContent .content table .tbody .rank {
-  text-align: center;
+#kobisContent .content table .tbody .customer-count {
+  color: #64CCC5;
 }/*# sourceMappingURL=kobisApi.css.map */
