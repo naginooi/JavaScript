@@ -8,18 +8,18 @@ const promise2 = new Promise((resolve, reject) => {
 });
 
 Promise.race([promise1, promise2]).then(function (value) {
-  console.log(value);
+  console.log(value); //first value
 });
 
 /*
 Promise
   .all([promise1, promise2])
   .then(data => {
-       const[promise1data, promise2data] = data;
-       console.log(promise1data, promise2data);
+    const[promise1data, promise2data] = data;
+    console.log(promise1data, promise2data);
   })
   .catch(err => {
-       console.log(err);
+    console.log(err);
   }); 
 */
 

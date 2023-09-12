@@ -1,13 +1,16 @@
-@font-face { //네오둥근
-  font-family: 'NeoDunggeunmoPro-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+@font-face {
+  //네오둥근
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face { //라인
-  font-family: 'LINESeedKR-Bd';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+@font-face {
+  //라인
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -15,7 +18,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'LINESeedKR-Bd';
+  font-family: "LINESeedKR-Bd";
 }
 
 form {
@@ -28,7 +31,7 @@ form {
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #176B87;
+    background-color: #176b87;
   }
 }
 
@@ -46,8 +49,8 @@ form {
     h2 {
       margin-bottom: 20px;
       text-align: center;
-      color: #053B50;
-      font-family: 'NeoDunggeunmoPro-Regular';
+      color: #053b50;
+      font-family: "NeoDunggeunmoPro-Regular";
     }
 
     table {
@@ -72,15 +75,15 @@ form {
 
       .thead {
         height: 60px;
-        background: #176B87;
+        background: #176b87;
         font-size: 16px;
         color: #fff;
       }
 
       .tbody {
         height: 48px;
-        border-bottom: 1px solid #E3F1D5;
-        font-family: 'LINESeedKR-Bd';
+        border-bottom: 1px solid #e3f1d5;
+        font-family: "LINESeedKR-Bd";
         font-size: 18px;
         text-align: center;
         word-break: keep-all;
@@ -89,8 +92,12 @@ form {
           border: 0;
         }
 
+        .movieName {
+          cursor: pointer;
+        }
+
         .customer-count {
-          color: #64CCC5;
+          color: #64ccc5;
         }
 
         .openDt {

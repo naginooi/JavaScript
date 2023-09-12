@@ -26,7 +26,7 @@ form button {
   border: none;
   border-radius: 5px;
   color: #fff;
-  background-color: #176B87;
+  background-color: #176b87;
 }
 
 #kobisContent {
@@ -43,7 +43,7 @@ form button {
 #kobisContent .content h2 {
   margin-bottom: 20px;
   text-align: center;
-  color: #053B50;
+  color: #053b50;
   font-family: "NeoDunggeunmoPro-Regular";
 }
 #kobisContent .content table {
@@ -66,13 +66,13 @@ form button {
 }
 #kobisContent .content table .thead {
   height: 60px;
-  background: #176B87;
+  background: #176b87;
   font-size: 16px;
   color: #fff;
 }
 #kobisContent .content table .tbody {
   height: 48px;
-  border-bottom: 1px solid #E3F1D5;
+  border-bottom: 1px solid #e3f1d5;
   font-family: "LINESeedKR-Bd";
   font-size: 18px;
   text-align: center;
@@ -81,8 +81,11 @@ form button {
 #kobisContent .content table .tbody:last-child {
   border: 0;
 }
+#kobisContent .content table .tbody .movieName {
+  cursor: pointer;
+}
 #kobisContent .content table .tbody .customer-count {
-  color: #64CCC5;
+  color: #64ccc5;
 }
 #kobisContent .content table .tbody .openDt {
   font-size: 16px;

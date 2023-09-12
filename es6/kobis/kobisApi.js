@@ -210,17 +210,12 @@ const kobis = {
 
 let date;
 
-//일별 박스오피스 출력
-const kobisData = function (sdate) {
-  fetch(
-    `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`
-  ) //api 주소 가져오기
-    .then((response) => response.json()) //읽어온 데이터를 json으로 변환
-    .then((kobis) => {
-      //kobis라는 객체 안의 데이터 추출
-      let showKobis = kobis.boxOfficeResult;
-      let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
-      const movieList = `
+//리스트 구성하기
+const showMovieList = function () {
+  //kobis라는 객체 안의 데이터 추출
+  let showKobis = kobis.boxOfficeResult;
+  let showKobisRankList = kobis.boxOfficeResult.dailyBoxOfficeList;
+  const movieList = `
         <div class = "content">
           <h2 class = "title">${showKobis.boxofficeType} (${showKobis.showRange})</h2>
           <table>
@@ -239,7 +234,7 @@ const kobisData = function (sdate) {
                   `
               <tr class="tbody">
                 <td class="rank">${movie.rank}위</td>
-                <td class="movieName">${movie.movieNm}</td> 
+                <td class="movieName" id=${movie.movieCd}>${movie.movieNm}</td> 
                 <td class="openDt">${movie.openDt} </td> 
                 <td class="customer-count">${parseInt(movie.audiAcc).toLocaleString()}명</td> 
                 <td class="revenue-count">${parseInt(movie.salesAcc).toLocaleString()}원</td> 
@@ -250,15 +245,39 @@ const kobisData = function (sdate) {
           </table>
         </div>
     `;
-      document.querySelector('#kobisContent').innerHTML = movieList;
+  document.querySelector('#kobisContent').innerHTML = movieList;
+  const mlist = document.querySelectorAll('.movieName');
+  for (let i = 0; i < mlist.length; i++) {
+    const item = mlist[i];
+    item.addEventListener('click', () => {
+      const movieCode = item.getAttribute('id');
+      //상세정보 API Function 호출
+      execKobisContent(movieCode);
     });
+  }
 };
 
+//api 주소 가져와서 출력하기
 const execKobis = (sdate) => {
   fetch(
     `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${sdate}`
   ) //api 주소 가져오기
-    .then((response) => response.json());
+    .then((response) => response.json())
+    .then(showMovieList);
+};
+
+//영화상세 정보 구성하기
+const showMovieContent = (mContent) => {
+  alert(JSON.stringify(mContent.movieInfoResult.movieInfo.movieNm));
+};
+
+//영화상세 정보 출력 함수
+const execKobisContent = (id) => {
+  fetch(
+    `https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd=${id}`
+  )
+    .then((response) => response.json())
+    .then(showMovieContent);
 };
 
 function getFormatDate(date) {
@@ -279,10 +298,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   date = new Date();
 
-  kobisData(getFormatDate(date)); //default로 어제자 날짜를 보여준다
+  showMovieList(getFormatDate(date)); //default로 어제자 날짜를 보여준다
 
   document.querySelector('#search').addEventListener('click', (e) => {
     let sdate = document.querySelector('#searchDate').value;
-    kobisData(sdate);
+    showMovieList(sdate);
   });
 });
