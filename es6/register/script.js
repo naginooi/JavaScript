@@ -9,6 +9,7 @@ function form_check() {
   const pw = document.getElementById('pw');
   const pwCheck = document.getElementById('pw-check');
   const birth = document.getElementById('birth');
+  const email = document.querySelector('.email');
   const phone = document.getElementById('phone');
 
   function errColor() {
@@ -67,6 +68,13 @@ function form_check() {
     errColor();
     document.getElementById('birth-des').innerText = '8자리를 입력해주세요';
     birth.focus();
+    return false;
+  }
+
+  //email
+  if (email.value == '') {
+    errColor();
+    document.getElementById('email-des').innerText = '이메일을 입력해주세요';
     return false;
   }
 
@@ -145,5 +153,5 @@ function searchAddress() {
 function selectEmail() {
   let email = document.getElementById('email-select');
   let value = email.options[email.selectedIndex].value;
-  document.querySelector('.back-email').value = value;
+  document.getElementById('back-email').value = value;
 }

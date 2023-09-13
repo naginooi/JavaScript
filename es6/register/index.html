@@ -54,13 +54,15 @@
         </p>
         <p>
           <label for="email">이메일</label>
-          <input type="email" name="email" class="front-email" /> @
-          <input type="email" name="" class="back-email" />
+          <input type="email" name="email" id="email" class="email" /> @
+          <input type="email" name="email" id="back-email" class="email" />
           <select id="email-select" onchange="selectEmail()">
-            <option value="" selected disabled>직접 입력</option>
+            <option value="" selected>직접 입력</option>
             <option value="naver.com">naver.com</option>
             <option value="gmail.com">gmail.com</option>
           </select>
+          <br />
+          <span class="errorText" id="email-des"></span>
         </p>
         <p>
           <label for="phone">전화번호</label>
