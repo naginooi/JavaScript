@@ -70,19 +70,6 @@ function form_check() {
     return false;
   }
 
-  //email
-  const domain = document.querySelector('.back-email');
-  const domainOption = document.querySelector('#email-select');
-  domainOption.addEventListener('change', (e) => {
-    if (e.target.value !== 'self') {
-      domain.value = e.target.value;
-      domain.disabled = true;
-    } else {
-      domain.value = '';
-      domain.disabled = false;
-    }
-  });
-
   //phone
   if (phone.value.includes('-')) {
     errColor();
@@ -152,4 +139,11 @@ function searchAddress() {
       document.getElementById('detail-add').focus();
     },
   }).open();
+}
+
+//email select
+function selectEmail() {
+  let email = document.getElementById('email-select');
+  let value = email.options[email.selectedIndex].value;
+  document.querySelector('.back-email').value = value;
 }

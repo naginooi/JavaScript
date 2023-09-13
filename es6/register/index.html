@@ -56,8 +56,8 @@
           <label for="email">이메일</label>
           <input type="email" name="email" class="front-email" /> @
           <input type="email" name="" class="back-email" />
-          <select id="email-select">
-            <option value="self" selected disabled>직접 입력</option>
+          <select id="email-select" onchange="selectEmail()">
+            <option value="" selected disabled>직접 입력</option>
             <option value="naver.com">naver.com</option>
             <option value="gmail.com">gmail.com</option>
           </select>
