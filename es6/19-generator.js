@@ -1,3 +1,6 @@
+//generator object is returned by a generator function and it conforms to both the iterable protocol and the iterator protocol.
+//generator is a subclass of the hidden Iterator class.
+
 /** 제너레이터 */
 function* fruitList() {
   yield 'Banana'; //반환할 컨텐츠 앞에 yield 정의
@@ -5,23 +8,20 @@ function* fruitList() {
   yield 'Orange';
 }
 
-const fruits = fruitList();
-
-//제너레이터
-console.log(fruits.next()); //{ value: 'Banana', done: false }
-console.log(fruits.next()); //{ value: 'Apple', done: false }
-console.log(fruits.next()); //{ value: 'Orange', done: false }
-console.log(fruits.next()); //{ value: undefined, done: true }
-
-/** 제너레이터 종료 */
-function* fList() {
-  yield '바나나';
-  yield '복숭아';
-  yield '사과';
-  yield '멜론';
-  yield '수박';
+let fruits = '';
+for (const fruit of fruitList()) {
+  fruits = fruits + fruit + ' ';
 }
 
-const fts = fList();
+console.log(fruits);
 
-console.log(fts.return()); //{ value: undefined, done: true }
+const fruitGen = fruitList();
+//객체타입으로 반환
+// console.log(fruitGen.next()); //{ value: 'Banana', done: false }
+// console.log(fruitGen.next().value); //Apple
+
+while (true) {
+  const data = fruitGen.next();
+  if (!data.done) console.log(data.value); //done: true 일 때 value는 undefined. next()가 끝났다는 뜻
+  else break;
+}
