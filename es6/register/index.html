@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script defer src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset class="container">
+        <legend>회원가입</legend>
+        <p>
+          <label for="name">이름</label>
+          <input type="text" name="name" id="name" />
+          <br />
+          <span class="errorText" id="name-des"></span>
+        </p>
+        <p>
+          <label for="id">아이디</label>
+          <input type="text" name="id" id="id" minlength="4" maxlength="12" />
+          <button type="button">아이디 중복확인</button>
+          <br />
+          <span class="errorText" id="id-des">*4~12글자까지만 입력 가능합니다</span>
+        </p>
+        <p>
+          <label for="name">비밀번호</label>
+          <input type="password" name="pw" id="pw" minlength="4" maxlength="12" />
+          <br />
+          <span class="errorText" id="pw-des">*4~12글자까지만 입력 가능합니다</span>
+        </p>
+        <p>
+          <label for="pw-check">비밀번호 확인</label>
+          <input type="password" name="pw-check" id="pw-check" />
+          <br />
+          <span id="correct-check"></span>
+        </p>
+        <p>
+          <label for="birth">생년월일</label>
+          <input type="text" maxlength="8" name="birth" id="birth" />
+          <br />
+          <span class="errorText" id="birth-des">*ex)19900101 - 8자리로 입력</span>
+        </p>
+        <p>
+          <label for="address">주소</label>
+          <input type="text" placeholder="우편번호" id="zipcode" />
+          <button type="button" id="search-btn" onclick="searchAddress()">주소 검색</button>
+          <br />
+          <input type="text" placeholder="기본주소" id="default-add" />
+          <input type="text" placeholder="참고항목" id="extra-add" />
+          <input type="text" placeholder="상세 주소" id="detail-add" />
+        </p>
+        <p>
+          <label for="email">이메일</label>
+          <input type="email" name="email" class="front-email" /> @
+          <input type="email" name="" class="back-email" />
+          <select id="email-select">
+            <option value="self" selected disabled>직접 입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="gmail.com">gmail.com</option>
+          </select>
+        </p>
+        <p>
+          <label for="phone">전화번호</label>
+          <input type="text" id="phone" name="phone" />
+          <br />
+          <span class="errorText" id="phone-des">* '-'없이 숫자만 입력</span>
+        </p>
+        <input type="checkbox" name="checkbox" id="checkbox" class="errorText" /> 약관 동의
+        <br />
+        <span class="errorText" id="checkbox-des">*필수</span>
+        <div class="bottom-btn">
+          <button type="button" id="prev">이전으로</button>
+          <button type="button" id="register">회원가입</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
