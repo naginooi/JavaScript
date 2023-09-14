@@ -11,90 +11,105 @@ function form_check() {
   const birth = document.getElementById('birth');
   const email = document.querySelector('.email');
   const phone = document.getElementById('phone');
+  const agree = document.getElementById('agree');
 
   function errColor() {
-    document.querySelector('.errorText').style.color = 'red';
+    err_txt.style.color = 'red';
   }
   //name
   if (name.value == '') {
+    var err_txt = document.getElementById('name-des');
     errColor();
-    document.getElementById('name-des').innerText = '이름을 입력해주세요';
+    err_txt.innerText = '이름을 입력해주세요';
     name.focus();
     return false;
   }
   //id
   if (id.value == '') {
+    var err_txt = document.getElementById('id-des');
     errColor();
-    document.getElementById('id-des').innerText = '아이디를 입력해주세요';
+    err_txt.innerText = '아이디를 입력해주세요';
     id.focus();
     return false;
   }
 
   const idLength = id.value.length;
   if (idLength < 4 || idLength > 12) {
+    var err_txt = document.getElementById('id-des');
     errColor();
-    document.getElementById('id-des').innerText = '글자수를 확인해주세요';
+    err_txt.innerText = '글자수를 확인해주세요';
+    id.focus();
+    return false;
   }
 
   //pw
   if (pw.value == '') {
+    var err_txt = document.getElementById('pw-des');
     errColor();
-    document.getElementById('pw-des').innerText = '비밀번호를 입력해주세요';
+    err_txt.innerText = '비밀번호를 입력해주세요';
     pw.focus();
     return false;
-  } else if (pw.value === pwCheck.value) {
+  }
+  if (pw.value == pwCheck.value) {
     document.getElementById('correct-check').style.color = 'black';
     document.getElementById('correct-check').innerText = '일치합니다';
   } else {
     document.getElementById('correct-check').style.color = 'red';
     document.getElementById('correct-check').innerText = '일치하지 않습니다';
+    pwCheck.focus();
+    return false;
   }
   const pwLength = pw.value.length;
   if (pwLength < 4 || pwLength > 12) {
+    var err_txt = document.getElementById('pw-des');
     errColor();
-    document.getElementById('pw-des').innerText = '글자수를 확인해주세요';
+    err_txt.innerText = '글자수를 확인해주세요';
+    pw.focus();
     return false;
   }
 
   //birth
   if (birth.value == '') {
+    var err_txt = document.getElementById('birth-des');
     errColor();
-    document.getElementById('birth-des').innerText = '생년월일을 입력해주세요';
+    err_txt.innerText = '생년월일을 입력해주세요';
     birth.focus();
     return false;
   }
   const birthLength = birth.value.length;
-  if (birthLength < 8) {
+  if (birth.value.includes('-') || birthLength < 8) {
+    var err_txt = document.getElementById('birth-des');
     errColor();
-    document.getElementById('birth-des').innerText = '8자리를 입력해주세요';
+    err_txt.innerText = '8자리를 입력해주세요';
     birth.focus();
     return false;
   }
 
   //email
   if (email.value == '') {
+    var err_txt = document.getElementById('email-des');
     errColor();
-    document.getElementById('email-des').innerText = '이메일을 입력해주세요';
+    err_txt.innerText = '이메일을 입력해주세요';
     return false;
   }
 
   //phone
   if (phone.value.includes('-')) {
+    var err_txt = document.getElementById('phone-des');
     errColor();
-    document.getElementById('phone-des').innerText = '-없이 입력해주세요';
+    err_txt.innerText = '-없이 입력해주세요';
     phone.focus();
     return false;
   }
 
   //checkbox
-  if (!checkbox.checked) {
-    errColor();
-    document.getElementById('checkbox-des').innerText = '약관을 동의해주세요';
-    checkbox.focus();
+  if (!agree.checked) {
+    alert('약관 동의가 필요합니다');
+    agree.focus();
     return false;
   }
 
-  // join_form.submit()
+  join_form.submit();
 }
 
 document.querySelector('#register').addEventListener('click', form_check);

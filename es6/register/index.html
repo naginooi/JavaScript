@@ -9,27 +9,27 @@
     <title>Document</title>
   </head>
   <body>
-    <form>
+    <form name="join_form">
       <fieldset class="container">
         <legend>회원가입</legend>
         <p>
           <label for="name">이름</label>
           <input type="text" name="name" id="name" />
           <br />
-          <span class="errorText" id="name-des"></span>
+          <span id="name-des"></span>
         </p>
         <p>
           <label for="id">아이디</label>
-          <input type="text" name="id" id="id" minlength="4" maxlength="12" />
+          <input type="text" name="id" id="id" />
           <button type="button">아이디 중복확인</button>
           <br />
-          <span class="errorText" id="id-des">*4~12글자까지만 입력 가능합니다</span>
+          <span id="id-des">* 4~12글자까지만 입력 가능합니다</span>
         </p>
         <p>
-          <label for="name">비밀번호</label>
-          <input type="password" name="pw" id="pw" minlength="4" maxlength="12" />
+          <label for="pw">비밀번호</label>
+          <input type="password" name="pw" id="pw" />
           <br />
-          <span class="errorText" id="pw-des">*4~12글자까지만 입력 가능합니다</span>
+          <span id="pw-des">* 4~12글자까지만 입력 가능합니다</span>
         </p>
         <p>
           <label for="pw-check">비밀번호 확인</label>
@@ -41,7 +41,7 @@
           <label for="birth">생년월일</label>
           <input type="text" maxlength="8" name="birth" id="birth" />
           <br />
-          <span class="errorText" id="birth-des">*ex)19900101 - 8자리로 입력</span>
+          <span id="birth-des">* ex)19900101 - 8자리로 입력</span>
         </p>
         <p>
           <label for="address">주소</label>
@@ -54,29 +54,32 @@
         </p>
         <p>
           <label for="email">이메일</label>
-          <input type="email" name="email" id="email" class="email" /> @
-          <input type="email" name="email" id="back-email" class="email" />
+          <input type="text" name="email" id="email" class="email" /> @
+          <input type="text" name="back-email" id="back-email" class="email" />
           <select id="email-select" onchange="selectEmail()">
             <option value="" selected>직접 입력</option>
             <option value="naver.com">naver.com</option>
             <option value="gmail.com">gmail.com</option>
           </select>
           <br />
-          <span class="errorText" id="email-des"></span>
+          <span id="email-des"></span>
         </p>
         <p>
           <label for="phone">전화번호</label>
           <input type="text" id="phone" name="phone" />
           <br />
-          <span class="errorText" id="phone-des">* '-'없이 숫자만 입력</span>
+          <span id="phone-des">* '-'없이 숫자만 입력</span>
         </p>
-        <input type="checkbox" name="checkbox" id="checkbox" class="errorText" /> 약관 동의
-        <br />
-        <span class="errorText" id="checkbox-des">*필수</span>
-        <div class="bottom-btn">
+        <p>
+          <input type="checkbox" name="agree" id="agree" />
+          <label for="agree">약관 동의</label>
+          <br />
+          <span id="checkbox-des">* 필수</span>
+        </p>
+        <p class="bottom-btn">
           <button type="button" id="prev">이전으로</button>
           <button type="button" id="register">회원가입</button>
-        </div>
+        </p>
       </fieldset>
     </form>
   </body>

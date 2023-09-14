@@ -8,6 +8,10 @@
   margin: 50px auto;
 }
 
+.container legend {
+  text-align: center;
+}
+
 .container p {
   margin-bottom: 30px;
 }
